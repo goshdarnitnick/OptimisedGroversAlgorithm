@@ -1,4 +1,4 @@
-# Git ignore file for the Solid project
+# Git ignore file cloned from Microsoft Kata repo
 
 # Build artifacts
 bin/

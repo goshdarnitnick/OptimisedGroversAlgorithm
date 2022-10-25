@@ -1,7 +1,7 @@
 namespace OptimisedGroversAlgorithm {
     // Title: Using a Generalised Algorithm to Illustrate the Complexity of Quantum Search
 	// Author: Nicholas Dale
-	// Version: 1.0
+	// Version: 1.1
 	// Date: 25/10/22
 	// Description: This source code file includes a Q# implementation of Grover's Algorithm, along with two implemented Oracles
 
@@ -227,10 +227,6 @@ namespace OptimisedGroversAlgorithm {
     }
 
     // ------------------------------------------------------ //
-    // Hash function Oracles
-    // TODO
-
-    // ------------------------------------------------------ //
     // SAT Oracles
     // Solves the General SAT problem
     // Find values that satisfy
@@ -303,8 +299,8 @@ namespace OptimisedGroversAlgorithm {
         // For each vertex
         for v in 0 .. nVertices - 1 {
 
-            Message("Validating graph colouring: ");
-            Message($"Vertex {v} - colour {BoolArrayAsInt(colourBits[v])}");
+            // Message("Validating graph colouring: ");
+            // Message($"Vertex {v} - colour {BoolArrayAsInt(colourBits[v])}");
 
             // For each edge
             for e in 0 .. Length(edges) - 1 {
@@ -422,6 +418,10 @@ namespace OptimisedGroversAlgorithm {
     operation Oracle_Xor_Reference (queryRegister : Qubit[], target : Qubit) : Unit is Adj {        
         ApplyToEachA(CNOT(_, target), queryRegister);
     }
+
+    // ------------------------------------------------------ //
+    // Hash function Oracles
+    // Not implemented due to time constraints
 
 }
 
